@@ -85,7 +85,7 @@ void sendWithRetry(MSG &msg)
     memcpy(&copy, &msg, sizeof(MSG));
     sendMsg(msg);
 
-    const unsigned long start = millis();
+    // const unsigned long start = millis();
     unsigned int retry = 0;
     do
     {
@@ -99,12 +99,14 @@ void sendWithRetry(MSG &msg)
             retry++;
         }
         delay(RETRY_DELAY);
-    } while (millis() - start < RETRY_TIMEOUT || retry < MAX_RETRY);
+    // } while (millis() - start < RETRY_TIMEOUT || retry < MAX_RETRY);
+    } while (retry < MAX_RETRY);
 }
 
 void setup()
 {
     Serial.begin(9600);
+    Serial.setTimeout(1500);
 
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(RX_PWR_PIN, OUTPUT);

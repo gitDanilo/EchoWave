@@ -3,8 +3,8 @@
 
 #include "RCSwitch.h"
 
-#define MSG_READY 0x51 // (Q) No pram
-#define MSG_RX_REQUEST 0x52 // (R) No pram
+#define MSG_READY 0x51 // (Q) No param
+#define MSG_RX_REQUEST 0x52 // (R) No param
 #define MSG_STOP 0x53 // (S) No param
 #define MSG_TX_REQUEST 0x54 // (T) RC_DATA
 #define MSG_REPLY 0x55 // (U) REPLY_DATA
